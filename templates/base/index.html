@@ -1,0 +1,662 @@
+{% include 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+    <!-- END LOADER -->
+
+    <!-- START HEADER -->
+    {% include 'include/header.html' %}
+    <!-- END HEADER -->
+
+    <!-- START SECTION BANNER -->
+    <div class="banner_section staggered-animation-wrap">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade carousel_style1 light_arrow"
+            data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active background_bg overlay_bg_60" data-img-src="{% static 'assets/images/banner1.jpg' %}">
+                    <div class="banner_slide_content">
+                        <div class="container"><!-- STRART CONTAINER -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 col-md-12 col-sm-12 text-center">
+                                    <div class="banner_content text_white">
+                                        <h2 class="staggered-animation font_style1" data-animation="fadeInUp"
+                                            data-animation-delay="0.2s">Delicious food</h2>
+                                        <p class="staggered-animation" data-animation="fadeInUp"
+                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem
+                                            Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                            middle of text.</p>
+                                        <a class="btn btn-default btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Get Started</a>
+                                        <a class="btn btn-white btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END CONTAINER-->
+                    </div>
+                </div>
+                <div class="carousel-item background_bg overlay_bg_60" data-img-src="{% static 'assets/images/banner2.jpg' %}">
+                    <div class="banner_slide_content">
+                        <div class="container"><!-- STRART CONTAINER -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 col-md-12 col-sm-12 text-center">
+                                    <div class="banner_content text_white">
+                                        <h2 class="staggered-animation font_style1" data-animation="fadeInUp"
+                                            data-animation-delay="0.2s">Choose & enjoy</h2>
+                                        <p class="staggered-animation" data-animation="fadeInUp"
+                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem
+                                            Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                            middle of text.</p>
+                                        <a class="btn btn-default btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Get Started</a>
+                                        <a class="btn btn-white btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END CONTAINER-->
+                    </div>
+                </div>
+                <div class="carousel-item background_bg overlay_bg_60" data-img-src="{% static 'assets/images/banner3.jpg' %}">
+                    <div class="banner_slide_content">
+                        <div class="container"><!-- STRART CONTAINER -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 col-md-12 col-sm-12 text-center">
+                                    <div class="banner_content text_white">
+                                        <h2 class="staggered-animation font_style1" data-animation="fadeInUp"
+                                            data-animation-delay="0.2s">Feel Better Food</h2>
+                                        <p class="staggered-animation" data-animation="fadeInUp"
+                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem
+                                            Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                            middle of text.</p>
+                                        <a class="btn btn-default btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Get Started</a>
+                                        <a class="btn btn-white btn-radius staggered-animation" href="#"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END CONTAINER-->
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i
+                    class="ion-chevron-left"></i></a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i
+                    class="ion-chevron-right"></i></a>
+        </div>
+    </div>
+    <!-- END SECTION BANNER -->
+
+    <!-- START SECTION ABOUT -->
+    <div class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="about_img">
+                        <img src="{% static 'assets/images/about_img1.jpg' %}" alt="about_img1" />
+                    </div>
+                </div>
+                <div class="col-lg-7 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="about_section pl-lg-3">
+                        <div class="heading_s1">
+                            <span class="sub_heading font_style1">About Us</span>
+                            <h2>Welcome to our restaurant</h2>
+                        </div>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+                            embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet
+                            tend to repeat predefined chunks as necessary</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita
+                            sed nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
+                        <a class="btn btn-dark btn-radius" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION ABOUT -->
+
+    <!-- START SECTION OUR MENU -->
+    <div class="section bg_linen">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="heading_s1 text-center animation" data-animation="fadeInUp"
+                        data-animation-delay="0.02s">
+                        <div class="sub_heading font_style1">Special Food</div>
+                        <h2>from Our Menu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="small_divider clearfix"></div>
+                    <ul class="menu_list animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Berry Salad</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$12</span>
+                                        </div>
+                                    </div>
+                                    <p>Blue cheese, Paupiette of chicken, rosemary salt and beans</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Pancake</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$14</span>
+                                        </div>
+                                    </div>
+                                    <p>Marinated tomatoes, cornish mackerel, fragrant curry</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Egg Bread</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$04</span>
+                                        </div>
+                                    </div>
+                                    <p>Spelt, girolles,Smoked quail, parsley, crispy egg</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Milky Fruit</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$06</span>
+                                        </div>
+                                    </div>
+                                    <p>Duck confit, wilted spinach, white bean & ham cassoulet</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Berry Bread</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$09</span>
+                                        </div>
+                                    </div>
+                                    <p>Rosemary salt potatoes, Backed salmon, hollandaise sauce</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Orange Jam Bread</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$03</span>
+                                        </div>
+                                    </div>
+                                    <p>Creamy poienta, carrots & port sauce, english peas</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Orange Jam Bread</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$03</span>
+                                        </div>
+                                    </div>
+                                    <p>Artchokes, farro & black current gastrique, Fava beans</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single_menu_product">
+                                <div class="menu_product_info">
+                                    <div class="menu_title_price">
+                                        <div class="menu_title">
+                                            <h5>Orange Jam Bread</h5>
+                                        </div>
+                                        <div class="menu_title_line"></div>
+                                        <div class="menu_price">
+                                            <span>$03</span>
+                                        </div>
+                                    </div>
+                                    <p>Mint parsly with apple cider vinegar, sugar &spices, salt</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-sm-3">
+                    <a href="#" class="btn btn-default btn-radius">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- START SECTION OUR MENU -->
+
+    <!-- START SECTION MOBILE APP -->
+    <div class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="heading_s1">
+                        <span class="sub_heading font_style1">Put in Your Pocket</span>
+                        <h2>Download Our Mobile App</h2>
+                    </div>
+                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+                        embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to
+                        repeat predefined chunks as necessary</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita sed
+                        nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
+                    <a class="btn btn-dark btn-radius" href="#"><i class="ion-social-apple"></i>App Store</a>
+                    <a class="btn btn-default btn-radius" href="#"><i class="ion-social-android"></i>Play Store</a>
+                </div>
+                <div class="col-md-5 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="mobile_app text-center">
+                        <img src="{% static 'assets/images/mobile_app.png" alt="mobile_app" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION MOBILE APP -->
+
+    <!-- START SECTION BOOK TABLE -->
+    <div class="section background_bg overlay_bg_70" data-img-src="{% static 'assets/images/book_table_bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                    <div class="book_table">
+                        <div class="heading_s1 heading_light mb-md-0">
+                            <span class="sub_heading font_style1">Reservations</span>
+                            <h2>Book A Table</h2>
+                        </div>
+                        <div class="small_divider clearfix"></div>
+                        <div class="field_form form_style2 rounded_input">
+                            <form method="post" name="enq">
+                                <div class="row">
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="input_group">
+                                            <input required="required" placeholder="Name" class="form-control"
+                                                name="name" type="text">
+                                            <div class="input_icon">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="input_group">
+                                            <input required="required" placeholder="Email Address" class="form-control"
+                                                name="email" type="email">
+                                            <div class="input_icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="input_group">
+                                            <input placeholder="Time" class="form-control timepicker" data-theme="red"
+                                                name="date" type="text">
+                                            <div class="input_icon">
+                                                <i class="far fa-clock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="input_group">
+                                            <input required="required" placeholder="Mobile No." class="form-control"
+                                                name="phone" type="tel">
+                                            <div class="input_icon">
+                                                <i class="fa fa-mobile-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="input_group">
+                                            <input placeholder="Select Date" class="form-control datepicker" name="date"
+                                                type="text">
+                                            <div class="input_icon">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-sm-6">
+                                        <div class="custom_select">
+                                            <select class="form-control">
+                                                <option value="">Select Person</option>
+                                                <option value="1">1 Person</option>
+                                                <option value="2">2 Person</option>
+                                                <option value="3">3 Person</option>
+                                                <option value="4">4 Person</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" title="Submit Your Message!"
+                                            class="btn btn-white btn-radius" name="submit" value="Submit">book
+                                            now</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION BOOK TABLE -->
+
+    <!-- START SECTION TEAM -->
+    <div class="section pb_70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="heading_s1 text-center">
+                        <span class="sub_heading font_style1">Awesome Chef</span>
+                        <h2>Our Team Members</h2>
+                    </div>
+                    <p class="text-center leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="team_box team_style1 radius_all_10">
+                        <div class="team_img">
+                            <img src="{% static 'assets/images/team_img1.jpg' %}" alt="team_img1">
+                            <ul class="social_icons social_white">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team_content">
+                            <div class="team_title">
+                                <h4>Anders Stone</h4>
+                                <span>The Chef</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                    <div class="team_box team_style1 radius_all_10">
+                        <div class="team_img">
+                            <img src="{% static 'assets/images/team_img2.jpg' %}" alt="team_img2">
+                            <ul class="social_icons social_white">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team_content">
+                            <div class="team_title">
+                                <h4>Laura Martin</h4>
+                                <span>The Chef</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+                    <div class="team_box team_style1 radius_all_10">
+                        <div class="team_img">
+                            <img src="{% static 'assets/images/team_img3.jpg' %}" alt="team_img3">
+                            <ul class="social_icons social_white">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team_content">
+                            <div class="team_title">
+                                <h4>Adam Smith</h4>
+                                <span>The Chef</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.06s">
+                    <div class="team_box team_style1 radius_all_10">
+                        <div class="team_img">
+                            <img src="{% static 'assets/images/team_img4.jpg' %}" alt="team_img4">
+                            <ul class="social_icons social_white">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team_content">
+                            <div class="team_title">
+                                <h4>Bruce Flores</h4>
+                                <span>The Chef</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION TEAM -->
+
+    <!-- START SECTION TESTIMONIAL -->
+    <div class="section parallax_bg overlay_bg_70" data-parallax-bg-image="{% static 'assets/images/testimonial_bg.jpg' %}">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="heading_s1 heading_light text-center">
+                        <span class="sub_heading font_style1">Testimonial</span>
+                        <h2>Our Client Say!</h2>
+                    </div>
+                    <p class="text-center leads text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="testimonial_slider testimonial_style1 carousel_slider owl-carousel owl-theme nav_style1 dot_white"
+                        data-margin="30" data-loop="true" data-autoplay="true"
+                        data-responsive='{"0":{"items": "1"}, "767":{"items": "2"}, "1199":{"items": "2"}}'>
+                        <div class="testimonial_box">
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="{% static 'assets/images/user1.jpg' %}" alt="user" />
+                                </div>
+                                <div class="author_name">
+                                    <h5>Richard Clark</h5>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                            <div class="testimonial_desc">
+                                <p>Sed perspiciatis unde omnis iste natus error voluptatem laudantium, quaeillo
+                                    inventore sed veritatis architecto beatae vitae dicta explicabo eiusmod tempor
+                                    labore which pain can some pleasure.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial_box">
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="{% static 'assets/images/user2.jpg' %}" alt="user" />
+                                </div>
+                                <div class="author_name">
+                                    <h5>Daisy Lana</h5>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                            <div class="testimonial_desc">
+                                <p>Sed perspiciatis unde omnis iste natus error voluptatem laudantium, quaeillo
+                                    inventore sed veritatis architecto beatae vitae dicta explicabo eiusmod tempor
+                                    labore which pain can some pleasure.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial_box">
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="{% static 'assets/images/user3.jpg' %}" alt="user" />
+                                </div>
+                                <div class="author_name">
+                                    <h5>Alden Smith</h5>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                            <div class="testimonial_desc">
+                                <p>Sed perspiciatis unde omnis iste natus error voluptatem laudantium, quaeillo
+                                    inventore sed veritatis architecto beatae vitae dicta explicabo eiusmod tempor
+                                    labore which pain can some pleasure.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial_box">
+                            <div class="author_info">
+                                <div class="author_img">
+                                    <img src="{% static 'assets/images/user4.jpg' %}" alt="user" />
+                                </div>
+                                <div class="author_name">
+                                    <h5>John Becker</h5>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                            <div class="testimonial_desc">
+                                <p>Sed perspiciatis unde omnis iste natus error voluptatem laudantium, quaeillo
+                                    inventore sed veritatis architecto beatae vitae dicta explicabo eiusmod tempor
+                                    labore which pain can some pleasure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION TESTIMONIAL -->
+
+    <!-- START SECTION BLOG -->
+    <div class="section pb_70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="heading_s1 text-center">
+                        <span class="sub_heading font_style1">From The Blog</span>
+                        <h2>Our Latest News</h2>
+                    </div>
+                    <p class="text-center leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="blog_post blog_style1 box_shadow1">
+                        <div class="blog_img">
+                            <a href="#">
+                                <img src="{% static 'assets/images/blog_small_img1.jpg' %}" alt="blog_small_img1">
+                            </a>
+                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_text">
+                                <ul class="list_none blog_meta">
+                                    <li><a href="#"><i class="linearicons-user"></i> By Admin</a></li>
+                                    <li><a href="#"><i class="linearicons-bubbles"></i> 2 Comment</a></li>
+                                </ul>
+                                <h5 class="blog_title"><a href="#">The Sanford Stadium project consists of three main
+                                        areas</a></h5>
+                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                                    making this generator on the Internet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                    <div class="blog_post blog_style1 box_shadow1">
+                        <div class="blog_img">
+                            <a href="#">
+                                <img src="{% static 'assets/images/blog_small_img2.jpg' %}" alt="blog_small_img2">
+                            </a>
+                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_text">
+                                <ul class="list_none blog_meta">
+                                    <li><a href="#"><i class="linearicons-user"></i> By Admin</a></li>
+                                    <li><a href="#"><i class="linearicons-bubbles"></i> 2 Comment</a></li>
+                                </ul>
+                                <h5 class="blog_title"><a href="#">On the other hand we provide Inhence with righteous
+                                        Career</a></h5>
+                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                                    making this generator on the Internet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+                    <div class="blog_post blog_style1 box_shadow1">
+                        <div class="blog_img">
+                            <a href="#">
+                                <img src="{% static 'assets/images/blog_small_img3.jpg' %}" alt="blog_small_img3">
+                            </a>
+                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_text">
+                                <ul class="list_none blog_meta">
+                                    <li><a href="#"><i class="linearicons-user"></i> By Admin</a></li>
+                                    <li><a href="#"><i class="linearicons-bubbles"></i> 2 Comment</a></li>
+                                </ul>
+                                <h5 class="blog_title"><a href="#">A cheap and flexible solution for the starter package
+                                    </a></h5>
+                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                                    making this generator on the Internet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION BLOG -->
+
+    <!-- START FOOTER -->
+    {% include 'include/footer.html' %}
+    <!-- END FOOTER -->
+
+    <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+    <!-- Latest jQuery -->
+{% endblock %}

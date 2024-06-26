@@ -1,0 +1,173 @@
+{% load static %}
+    <header
+        class="header_wrap fixed-top light_skin sticky_dark_skin main_menu_uppercase transparent_header dd_dark_skin">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img class="logo_light" src="{% static 'assets/images/logo_light.png' %}" alt="logo">
+                    <img class="logo_dark" src="{% static 'assets/images/logo_dark.png' %}" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-expanded="false">
+                    <span class="ion-android-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Pages</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="#">About Us</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item" href="about.html">About
+                                                        Us</a></li>
+                                                <li><a class="dropdown-item nav-link nav_item" href="about-2.html">About
+                                                        Us 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="#">Gallery</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery.html">Gallery Grid</a></li>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery-masonry.html">Gallery Masonry</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="#">Contact Us</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="contact.html">Contact Us</a></li>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="contact-2.html">Contact Us 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="book-table.html">Book Table</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="login.html">Login</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="register.html">Register</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="404.html">404 Error Page</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="coming-soon.html">Coming
+                                            Soon</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Menu</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="menu.html">Menu Style 1</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="menu-2.html">Menu Style 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Chef</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="chef.html">Chef</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="chef-detail.html">Chef
+                                            Detail</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Blog</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="blog.html">Blog</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="blog-detail.html">Blog
+                                            Detail</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Shop</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Shop
+                                            Product Detail</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Shop Cart</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav attr-nav align-items-center">
+                    <li><a href="javascript:void(0);" class="nav-link search_trigger"><i
+                                class="linearicons-magnifier"></i></a>
+                        <div class="search_wrap">
+                            <span class="close-search"><i class="ion-ios-close-empty"></i></span>
+                            <form>
+                                <input type="text" placeholder="Search" class="form-control" id="search_input">
+                                <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
+                            </form>
+                        </div>
+                        <div class="search_overlay"></div>
+                    </li>
+                    <li><a class="nav-link cart_trigger" href="javascript:void(0);"><i
+                                class="linearicons-cart"></i><span class="cart_count">2</span></a>
+                        <div class="cart_box">
+                            <div class="cart_header">
+                                <h3>Your Cart</h3>
+                            </div>
+                            <ul class="cart_list">
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="{% static 'assets/images/cart_thamb1.jpg' %}" alt="cart_thumb1">Berry
+                                        Salad</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span
+                                                class="price_symbole">$</span></span>78.00</span>
+                                </li>
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="{% static 'assets/images/cart_thamb2.jpg' %}" alt="cart_thumb2">Milky
+                                        Fruit</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span
+                                                class="price_symbole">$</span></span>81.00</span>
+                                </li>
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="{% static 'assets/images/cart_thamb3.jpg' %}" alt="cart_thumb3">Egg Bread</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span
+                                                class="price_symbole">$</span></span>78.00</span>
+                                </li>
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="{% static 'assets/images/cart_thamb4.jpg' %}" alt="cart_thumb4">Orange
+                                        Jam</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span
+                                                class="price_symbole">$</span></span>81.00</span>
+                                </li>
+                            </ul>
+                            <div class="cart_footer">
+                                <p class="cart_total"><strong>Total:</strong> <span class="cart_price"> <span
+                                            class="price_symbole">$</span>159.00</span></p>
+                                <p class="cart_buttons"><a href="#"
+                                        class="btn btn-default btn-radius checkout">Checkout</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>

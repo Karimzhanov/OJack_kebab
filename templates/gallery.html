@@ -1,0 +1,158 @@
+{% include 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+    <!-- END LOADER -->
+
+    <!-- START HEADER -->
+    {% include 'include/header.html' %}
+    <!-- END HEADER -->
+
+    <!-- START SECTION BREADCRUMB -->
+    <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light"
+        data-img-src="{% static 'assets/images/gallery_bg.jpg' %}">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <h1>Our Gallery</h1>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Our Gallery</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- END CONTAINER-->
+    </div>
+    <!-- END SECTION BREADCRUMB -->
+
+    <!-- START SECTION GALLERY -->
+    <div class="section pb_70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                    <ul class="grid_container grid_col3 gutter_medium image_gallery gallery_hover_style1">
+                        <li class="grid-sizer"></li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item1.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small1.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item2.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small2.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item3.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small3.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item4.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small4.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item5.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small5.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item6.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small6.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item7.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small7.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item8.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small8.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{% static 'assets/images/gallery_item9.jpg' %}">
+                                    <div class="gallery_img">
+                                        <img src="{% static 'assets/images/gallery_item_small9.jpg' %}" alt="image">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION GALLERY -->
+
+    <!-- START FOOTER -->
+    {% include 'include/footer.html' %}
+    <!-- END FOOTER -->
+
+    <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+    <!-- Latest jQuery -->
+{% endblock %}
