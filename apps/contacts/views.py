@@ -25,7 +25,7 @@ def contact(request):
             )
           
         get_text(f"""
-                Оставлена заявка на Обратный бронь 
+                Оставлена заявка на Обратный связь 
 
 Дата:  {datetime.now()}
 Имя пользователя:  {name}
@@ -57,7 +57,7 @@ def reservation(request):
             num_people = request.POST.get('num_people')
 
             # Преобразование даты и времени в нужный формат
-            date_obj = datetime.strptime(date, '%Y-%m-%d').date()
+            date_obj = datetime.strptime(date, '%d/%m/%Y').date()
             time_obj = datetime.strptime(time, '%H:%M').time()
 
             # Создание нового объекта Reservation и сохранение его в базе данных
