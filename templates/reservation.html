@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Book Table</h1>
+                        <h1>бронировать </h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Book Table</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index'%}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">бронировать </li>
                     </ol>
                 </div>
             </div>
@@ -33,17 +33,17 @@
                 <div class="col-lg-7 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="book_table">
                         <div class="heading_s1 mb-md-0">
-                            <span class="sub_heading font_style1">Reservations</span>
-                            <h2>Book A Table</h2>
+                            <span class="sub_heading font_style1">Бронирование</span>
+                            <h2>Забронируйте столик</h2>
                         </div>
                         <div class="small_divider clearfix"></div>
                         <div class="field_form form_style1">
-                            <form method="post" name="enq">
+                            <form method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <div class="input_group">
-                                            <input required="required" placeholder="Name" class="form-control"
-                                                name="name" type="text">
+                                            <input required placeholder="Имя" class="form-control" name="name" type="text">
                                             <div class="input_icon">
                                                 <i class="fa fa-user"></i>
                                             </div>
@@ -51,8 +51,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="input_group">
-                                            <input required="required" placeholder="Email Address" class="form-control"
-                                                name="email" type="email">
+                                            <input required placeholder="Почта" class="form-control" name="email" type="email">
                                             <div class="input_icon">
                                                 <i class="fa fa-envelope"></i>
                                             </div>
@@ -60,17 +59,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="input_group">
-                                            <input placeholder="Time" class="form-control timepicker" data-theme="red"
-                                                name="date" type="text">
-                                            <div class="input_icon">
-                                                <i class="far fa-clock"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <div class="input_group">
-                                            <input required="required" placeholder="Mobile No." class="form-control"
-                                                name="phone" type="tel">
+                                            <input required placeholder="Номер телефона" class="form-control" name="phone" type="tel">
                                             <div class="input_icon">
                                                 <i class="fa fa-mobile-alt"></i>
                                             </div>
@@ -78,27 +67,39 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="input_group">
-                                            <input placeholder="Select Date" class="form-control datepicker" name="date"
-                                                type="text">
+                                            <input required placeholder="Выберите дату" class="form-control datepicker" name="date" type="text">
                                             <div class="input_icon">
                                                 <i class="far fa-calendar-alt"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
+                                        <div class="input_group">
+                                            <input required placeholder="Выберите время" class="form-control timepicker" name="time" type="text">
+                                            <div class="input_icon">
+                                                <i class="far fa-clock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
                                         <div class="custom_select">
-                                            <select class="form-control">
-                                                <option value="">Select Person</option>
-                                                <option value="1">1 Person</option>
-                                                <option value="2">2 Person</option>
-                                                <option value="3">3 Person</option>
-                                                <option value="4">4 Person</option>
+                                            <select class="form-control" name="num_people">
+                                                <option value="">Выберите количество человек</option>
+                                                <option value="1">1 человек</option>
+                                                <option value="2">2 человека</option>
+                                                <option value="3">3 человека</option>
+                                                <option value="4">4 человека</option>
+                                                <option value="5">5 человек</option>
+                                                <option value="6">6 человек</option>
+                                                <option value="7">7 человек</option>
+                                                <option value="8">8 человек</option>
+                                                <option value="9">9 человек</option>
+                                                <option value="10">10 человек</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="submit" title="Submit Your Message!" class="btn btn-default"
-                                            name="submit" value="Submit">book now</button>
+                                        <button type="submit" class="btn btn-default" name="submit" value="Submit">Забронируйте сейчас</button>
                                     </div>
                                 </div>
                             </form>
@@ -116,33 +117,14 @@
     </div>
     <!-- END SECTION BOOK TABLE -->
 
-    <!-- START SECTION CTA -->
-    <div class="section background_bg" data-img-src="{% static 'assets/images/cta_bg.jpg' %}">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7 col-md-9 animation text-center" data-animation="fadeInUp"
-                    data-animation-delay="0.02s">
-                    <div class="heading_s1 heading_light">
-                        <span class="sub_heading font_style1">Discover Your Testy</span>
-                        <h2>The Family That Bacomes Together</h2>
-                    </div>
-                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur
-                        quibusdam enim expedita sed nesciunt incidunt laboriosam!</p>
-                    <a class="btn btn-white" href="#">Explore Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END SECTION CTA -->
-
     <!-- START SECTION MOBILE APP -->
     <div class="section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="heading_s1">
-                        <span class="sub_heading font_style1">Put in Your Pocket</span>
-                        <h2>Download Our Mobile App</h2>
+                        <span class="sub_heading font_style1">Положи в карман</span>
+                        <h2>Загрузите наше мобильное приложение</h2>
                     </div>
                     <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
                         embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to
