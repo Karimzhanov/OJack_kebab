@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from apps.base.models import Home
+from apps.base import models
 # Create your views here.
 def index(request):
-    user = Home.objects.latest('id')
+    user = models.Home.objects.latest('id')
     return render(request, 'base/index.html', locals())
 
 def about(request):
+    about = models.About.objects.latest('id')
+    team = models.Team.objects.all()
+    testimonial = models.Testimonial.objects.all()
     return render(request, 'base/about.html', locals())
 
-def contact(request):
-    return render(request, 'base/contact.html', locals())
 

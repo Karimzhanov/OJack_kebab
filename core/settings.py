@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.base',
     'apps.contacts',
     'apps.secondary',
+    'apps.users',
     'apps.telegram_bot',
     
     ]

@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>About Us 2</h1>
+                        <h1>О нас</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">About Us</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">О нас</li>
                     </ol>
                 </div>
             </div>
@@ -33,20 +33,16 @@
                 <div class="col-lg-6">
                     <div class="about_box box_shadow1">
                         <div class="heading_s1">
-                            <span class="sub_heading font_style1">About Us</span>
-                            <h2>our restaurant History</h2>
+                            <span class="sub_heading font_style1">О нас</span>
+                            <h2>История нашего Ресторана</h2>
                         </div>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                            embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet
-                            tend to repeat predefined chunks as necessary</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita
-                            sed nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
-                        <a class="btn btn-dark rounded-0" href="#">Read More</a>
+                        <p>{{about.description}}</p>
+                        <p>{{about.subdescription}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="fancy_style1 overlay_bg_20">
-                        <img src="{% static 'assets/images/about_img5.jpg' %}" alt="about_img5" />
+                        <img src="{{about.image.url}}" style="height: 600px; width: 700px;" alt="about_img5" />
                         <a href="https://www.youtube.com/watch?v=ZE2HxTmxfrI"
                             class="btn btn-ripple ripple_center video_popup animation" data-animation="fadeInUp"
                             data-animation-delay="0.6s"><span class="ripple"><i class="ion-play"></i></span></a>
@@ -66,7 +62,7 @@
                         <i class="flaticon-restaurant"></i>
                         <h3 class="counter_text"><span class="counter" data-from="0" data-to="200" data-speed="1000"
                                 data-refresh-interval="10"></span>+</h3>
-                        <p>Amazing Dishes</p>
+                        <p>Удивительные блюда</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
@@ -74,7 +70,7 @@
                         <i class="flaticon-contact"></i>
                         <h3 class="counter_text"><span class="counter" data-from="0" data-to="1500" data-speed="1000"
                                 data-refresh-interval="10"></span>+</h3>
-                        <p>Happy Customers</p>
+                        <p>Счастливый покупатели</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
@@ -82,7 +78,7 @@
                         <i class="flaticon-chef"></i>
                         <h3 class="counter_text"><span class="counter" data-from="0" data-to="700" data-speed="1000"
                                 data-refresh-interval="10"></span>+</h3>
-                        <p>Satified Staff</p>
+                        <p>Удовлетворенный персонал</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
@@ -90,7 +86,7 @@
                         <i class="flaticon-back-in-time"></i>
                         <h3 class="counter_text"><span class="counter" data-from="0" data-to="1500" data-speed="1000"
                                 data-refresh-interval="10"></span>+</h3>
-                        <p>Work Hour</p>
+                        <p>Рабочий час</p>
                     </div>
                 </div>
             </div>
@@ -99,30 +95,6 @@
     <!-- END SECTION COUNTER -->
 
     <!-- START SECTION MOBILE APP -->
-    <div class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-7 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                    <div class="heading_s1">
-                        <span class="sub_heading font_style1">Put in Your Pocket</span>
-                        <h2>Download Our Mobile App</h2>
-                    </div>
-                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                        embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to
-                        repeat predefined chunks as necessary</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita sed
-                        nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
-                    <a class="btn btn-dark btn-radius" href="#"><i class="ion-social-apple"></i>App Store</a>
-                    <a class="btn btn-default btn-radius" href="#"><i class="ion-social-android"></i>Play Store</a>
-                </div>
-                <div class="col-md-5 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-                    <div class="mobile_app text-center">
-                        <img src="{% static 'assets/images/mobile_app.png" alt="mobile_app" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- END SECTION MOBILE APP -->
 
     <!-- START SECTION TEAM -->
@@ -131,94 +103,68 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="heading_s1 text-center">
-                        <span class="sub_heading font_style1">Awesome Chef</span>
-                        <h2>Our Team Members</h2>
+                        <span class="sub_heading font_style1">Потрясающий шеф-повар</span>
+                        <h2>Наши сотрудники команды</h2>
                     </div>
-                    <p class="text-center leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore.</p>
+                    <p class="text-center leads">В ресторане "Ожак Кебаб" нашими поварами являются настоящие мастера своего дела, которые с любовью и мастерством готовят каждое блюдо, используя лучшие традиционные рецепты и свежие продукты.</p>
                 </div>
             </div>
+            <style>
+                .team_box {
+                    height: 450px;
+                    width: 250px;
+                    margin: 0 auto; /* Центрирование карточки */
+                }
+            
+                .team_img {
+                    height: 250px;
+                    width: 200px;
+                    margin: 0 auto; /* Центрирование изображения */
+                }
+            
+                .team_img img {
+                    height: 250px;
+                    width: 200px;
+                    border-radius: 15px;
+                }
+            
+                .team_content {
+                    height: 100px;
+                    width: 250px;
+                    text-align: center; /* Центрирование текста */
+                }
+            </style>
             <div class="row justify-content-center">
+                {% for team in team %}
                 <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                    <div class="team_box team_style2">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img1.jpg' %}" alt="team_img1">
+                    <div class="team_box team_style2" style="height: 250; width: 250px;">
+                        <div class="team_img" style="height: 250px; width: 200px;">
+                            <img src="{{team.photo.url}}" style="height: 300px; width: 250px; border-radius: 15px;" alt="team_img1">
                         </div>
-                        <div class="team_content">
+                        <div class="team_content"style="height: 180px; width: 250px;">
                             <div class="team_title">
-                                <h4>Anders Stone</h4>
-                                <span>Professor</span>
+                                <h4>{{team.fullname}}</h4>
+                                <span>{{team.profession}}</span>
                             </div>
                             <ul class="social_icons">
+                                {% if team.facebook %}
                                 <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                {% endif %}
+                                {% if team.twitter %}
                                 <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                {% endif %}
+                                {% if team.email %}
                                 <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
+                                {% endif %}
+                                {% if team.instagram %}
                                 <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
+                                {% endif %}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                    <div class="team_box team_style2">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img2.jpg' %}" alt="team_img2">
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Laura Martin</h4>
-                                <span>Accounting</span>
-                            </div>
-                            <ul class="social_icons">
-                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                    <div class="team_box team_style2">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img3.jpg' %}" alt="team_img3">
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Adam Smith</h4>
-                                <span>Ceo & Architer</span>
-                            </div>
-                            <ul class="social_icons">
-                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.6s">
-                    <div class="team_box team_style2">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img4.jpg' %}" alt="team_img4">
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Bruce Flores</h4>
-                                <span>Accounting</span>
-                            </div>
-                            <ul class="social_icons">
-                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -230,12 +176,26 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="heading_s1 mb-md-0 text-center">
-                        <span class="sub_heading font_style1">Testimonial</span>
-                        <h2>Our Client Say!</h2>
+                        <span class="sub_heading font_style1">Отзывы</span>
+                        <h2>Наши клиенты говорят!</h2>
                     </div>
                     <div class="small_divider clearfix"></div>
                 </div>
             </div>
+            <style>
+                .author_img img {
+                    border-radius: 50%;
+                    width: 100px; /* Укажите нужный размер */
+                    height: 100px; /* Укажите нужный размер */
+                }
+            
+                .slick-thumb .item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-9 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
                     <div class="testimonial_wrap radius_all_10 text-center">
@@ -243,116 +203,69 @@
                             data-slides-to-scroll="1" data-as-nav-for=".testimonial_slider" data-focus-on-select="true"
                             data-center-mode="true" data-css-ease="linear" data-autoplay="true" data-draggable="false"
                             data-arrows="false" data-infinite="true">
+            
+                            {% for testimonial in testimonial %}
                             <div class="item">
                                 <div class="author_img">
-                                    <img src="{% static 'assets/images/user1.jpg' %}" alt="user1">
+                                    <img src="{{testimonial.photo.url}}" alt="{{testimonial.name}}">
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="author_img">
-                                    <img src="{% static 'assets/images/user2.jpg' %}" alt="user2">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="author_img">
-                                    <img src="{% static 'assets/images/user3.jpg' %}" alt="user3">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="author_img">
-                                    <img src="{% static 'assets/images/user4.jpg' %}" alt="user4">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="author_img">
-                                    <img src="{% static 'assets/images/user5.jpg' %}" alt="user5">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="author_img">
-                                    <img src="{% static 'assets/images/user6.jpg' %}" alt="user6">
-                                </div>
-                            </div>
+                            {% endfor %}
+            
                         </div>
                         <div class="testimonial_slider testimonial_style3 slick_slider nav_style1"
                             data-slides-to-show="1" data-slides-to-scroll="1" data-as-nav-for=".slick-thumb"
-                            data-autoplay="true" data-infinite="true" data-arrows="false">
+                            data-autoplay="true" data-infinite="true" data-arrows="false" data-center-mode="true">
+            
+                            {% for testimonial in testimonial %}
                             <div class="testimonial_box">
                                 <div class="author_name">
-                                    <h5>Lissa Castro</h5>
-                                    <span>Designer</span>
+                                    <h5>{{testimonial.fullname}}</h5>
+                                    <span>{{testimonial.profession}}</span>
                                 </div>
                                 <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
+                                    <p>{{testimonial.comment}}</p>
                                 </div>
                             </div>
-                            <div class="testimonial_box">
-                                <div class="author_name">
-                                    <h5>Alden Smith</h5>
-                                    <span>Designer</span>
-                                </div>
-                                <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
-                                </div>
-                            </div>
-                            <div class="testimonial_box">
-                                <div class="author_name">
-                                    <h5>Daisy Lana</h5>
-                                    <span>Designer</span>
-                                </div>
-                                <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
-                                </div>
-                            </div>
-                            <div class="testimonial_box">
-                                <div class="author_name">
-                                    <h5>John Becker</h5>
-                                    <span>Designer</span>
-                                </div>
-                                <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
-                                </div>
-                            </div>
-                            <div class="testimonial_box">
-                                <div class="author_name">
-                                    <h5>Maria Wood</h5>
-                                    <span>Designer</span>
-                                </div>
-                                <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
-                                </div>
-                            </div>
-                            <div class="testimonial_box">
-                                <div class="author_name">
-                                    <h5>Richard Clark</h5>
-                                    <span>Designer</span>
-                                </div>
-                                <div class="testimonial_desc">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem elit amet
-                                        laudantium, quaeillo inventore sed veritatis et quasi architecto beatae vitae
-                                        dicta sunt explicabo eiusmod tempor incididunt ut labore which toil and pain can
-                                        procure him some great pleasure.</p>
-                                </div>
-                            </div>
+                            {% endfor %}
+            
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Добавьте Slick Slider скрипты -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+            
+            <script>
+                $(document).ready(function(){
+                    $('.slick-thumb').slick({
+                        slidesToShow: 5,
+                        slidesToScroll: 1,
+                        asNavFor: '.testimonial_slider',
+                        focusOnSelect: true,
+                        centerMode: true,
+                        cssEase: 'linear',
+                        autoplay: true,
+                        draggable: false,
+                        arrows: false,
+                        infinite: true
+                    });
+            
+                    $('.testimonial_slider').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        asNavFor: '.slick-thumb',
+                        autoplay: true,
+                        infinite: true,
+                        arrows: false,
+                        centerMode: true
+                    });
+                });
+            </script>
+            
         </div>
     </div>
     <!-- END SECTION TESTIMONIAL -->
