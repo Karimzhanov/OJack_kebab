@@ -5,9 +5,14 @@ from django.shortcuts import render
 from django.conf import settings
 from telebot import TeleBot, types
 from .models import TelegramUser
+import os
+from dotenv import load_dotenv
 
-TELEGRAM_TOKEN = '6972616043:AAG3K1y5ErBxk7AsW55Lhvc-_IKunZCB5A4'
-ADMIN_ID = '-1002129801395'
+load_dotenv()
+
+
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+ADMIN_ID = os.getenv('ADMIN_ID')
 
 
 bot = TeleBot(TELEGRAM_TOKEN, threaded=False)
