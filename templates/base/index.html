@@ -22,10 +22,10 @@
                                             data-animation-delay="0.2s">{{user.name}}</h2>
                                         <p class="staggered-animation" data-animation="fadeInUp"
                                             data-animation-delay="0.4s">{{user.discription}}</p>
-                                        <a class="btn btn-default btn-radius staggered-animation" href="#"
-                                            data-animation="fadeInUp" data-animation-delay="0.6s">Get Started</a>
-                                        <a class="btn btn-white btn-radius staggered-animation" href="#"
-                                            data-animation="fadeInUp" data-animation-delay="0.6s">Learn More</a>
+                                        <a class="btn btn-default btn-radius staggered-animation" href="{% url 'register' %}"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">регистрация</a>
+                                        <a class="btn btn-white btn-radius staggered-animation" href="{% url 'about'%}"
+                                            data-animation="fadeInUp" data-animation-delay="0.6s">Узнать больше</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@
                 <div class="col-lg-7 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
                     <div class="about_section pl-lg-3">
                         <div class="heading_s1">
-                            <span class="sub_heading font_style1">About Us</span>
-                            <h2>Welcome to our restaurant</h2>
+                            <span class="sub_heading font_style1">О нас</span>
+                            <h2>Добро пожаловать в наш ресторан</h2>
                         </div>
                         <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
                             embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet
@@ -118,8 +118,8 @@
                 <div class="col-xl-6 col-lg-8">
                     <div class="heading_s1 text-center animation" data-animation="fadeInUp"
                         data-animation-delay="0.02s">
-                        <div class="sub_heading font_style1">Special Food</div>
-                        <h2>from Our Menu</h2>
+                        <div class="sub_heading font_style1">Специальная еда</div>
+                        <h2>из нашего меню</h2>
                     </div>
                 </div>
             </div>
@@ -132,14 +132,14 @@
                                 <div class="menu_product_info">
                                     <div class="menu_title_price">
                                         <div class="menu_title">
-                                            <h5>Berry Salad</h5>
+                                            <h5>Ягодный салат</h5>
                                         </div>
                                         <div class="menu_title_line"></div>
                                         <div class="menu_price">
                                             <span>$12</span>
                                         </div>
                                     </div>
-                                    <p>Blue cheese, Paupiette of chicken, rosemary salt and beans</p>
+                                    <p>Голубой сыр, паупьет из курицы, соль с розмарином и фасоль.</p>
                                 </div>
                             </div>
                         </li>
@@ -267,33 +267,6 @@
     </div>
     <!-- START SECTION OUR MENU -->
 
-    <!-- START SECTION MOBILE APP -->
-    <div class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-7 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                    <div class="heading_s1">
-                        <span class="sub_heading font_style1">Put in Your Pocket</span>
-                        <h2>Download Our Mobile App</h2>
-                    </div>
-                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                        embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to
-                        repeat predefined chunks as necessary</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur quibusdam enim expedita sed
-                        nesciunt incidunt accusamus adipisci officia libero laboriosam!</p>
-                    <a class="btn btn-dark btn-radius" href="#"><i class="ion-social-apple"></i>App Store</a>
-                    <a class="btn btn-default btn-radius" href="#"><i class="ion-social-android"></i>Play Store</a>
-                </div>
-                <div class="col-md-5 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-                    <div class="mobile_app text-center">
-                        <img src="{% static 'assets/images/mobile_app.png" alt="mobile_app" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END SECTION MOBILE APP -->
-
     <!-- START SECTION BOOK TABLE -->
     <div class="section background_bg overlay_bg_70" data-img-src="{% static 'assets/images/book_table_bg.jpg' %}">
         <div class="container">
@@ -306,7 +279,7 @@
                         </div>
                         <div class="small_divider clearfix"></div>
                         <div class="field_form form_style2 rounded_input">
-                            <form method="post">
+                            <form method="post" action="{% url 'reservation' %}">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-6">
@@ -380,99 +353,78 @@
     <!-- END SECTION BOOK TABLE -->
 
     <!-- START SECTION TEAM -->
-    <div class="section pb_70">
+    <div class="section bg_linen pb_70">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="heading_s1 text-center">
-                        <span class="sub_heading font_style1">Awesome Chef</span>
-                        <h2>Our Team Members</h2>
+                        <span class="sub_heading font_style1">Потрясающий шеф-повар</span>
+                        <h2>Наши сотрудники команды</h2>
                     </div>
-                    <p class="text-center leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore.</p>
+                    <p class="text-center leads">В ресторане "Ожак Кебаб" нашими поварами являются настоящие мастера своего дела, которые с любовью и мастерством готовят каждое блюдо, используя лучшие традиционные рецепты и свежие продукты.</p>
                 </div>
             </div>
+            <style>
+                .team_box {
+                    height: 450px;
+                    width: 250px;
+                    margin: 0 auto; /* Центрирование карточки */
+                }
+            
+                .team_img {
+                    height: 250px;
+                    width: 200px;
+                    margin: 0 auto; /* Центрирование изображения */
+                }
+            
+                .team_img img {
+                    height: 250px;
+                    width: 200px;
+                    border-radius: 15px;
+                }
+            
+                .team_content {
+                    height: 100px;
+                    width: 250px;
+                    text-align: center; /* Центрирование текста */
+                }
+            </style>
             <div class="row justify-content-center">
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-                    <div class="team_box team_style1 radius_all_10">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img1.jpg' %}" alt="team_img1">
-                            <ul class="social_icons social_white">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
+                {% for team in team %}
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                    <div class="team_box team_style2" style="height: 250; width: 250px;">
+                        <div class="team_img" style="height: 250px; width: 200px;">
+                            <img src="{{team.photo.url}}" style="height: 300px; width: 250px; border-radius: 15px;" alt="team_img1">
                         </div>
-                        <div class="team_content">
+                        <div class="team_content"style="height: 180px; width: 250px;">
                             <div class="team_title">
-                                <h4>Anders Stone</h4>
-                                <span>The Chef</span>
+                                <h4>{{team.fullname}}</h4>
+                                <span>{{team.profession}}</span>
                             </div>
+                            <ul class="social_icons">
+                                {% if team.facebook %}
+                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                {% endif %}
+                                {% if team.twitter %}
+                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                {% endif %}
+                                {% if team.email %}
+                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
+                                {% endif %}
+                                {% if team.instagram %}
+                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
+                                {% endif %}
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
-                    <div class="team_box team_style1 radius_all_10">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img2.jpg' %}" alt="team_img2">
-                            <ul class="social_icons social_white">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Laura Martin</h4>
-                                <span>The Chef</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
-                    <div class="team_box team_style1 radius_all_10">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img3.jpg' %}" alt="team_img3">
-                            <ul class="social_icons social_white">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Adam Smith</h4>
-                                <span>The Chef</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.06s">
-                    <div class="team_box team_style1 radius_all_10">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img4.jpg' %}" alt="team_img4">
-                            <ul class="social_icons social_white">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team_content">
-                            <div class="team_title">
-                                <h4>Bruce Flores</h4>
-                                <span>The Chef</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
     <!-- END SECTION TEAM -->
+
 
     <!-- START SECTION TESTIMONIAL -->
     <div class="section parallax_bg overlay_bg_70" data-parallax-bg-image="{% static 'assets/images/testimonial_bg.jpg' %}">
