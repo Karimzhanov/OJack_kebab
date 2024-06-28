@@ -40,7 +40,8 @@
                             <span>Наш адрес</span>
                         {% for contact in info_contact %}
                             <p>{{ contact.our_location }}</p>
-                        {% endfor %}                        </div>
+                        {% endfor %}
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
@@ -53,7 +54,7 @@
                             {% for contact in info_contact %}
                                 <p>{{ contact.email }}</p>
                             {% endfor %}
-                        </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
@@ -75,7 +76,7 @@
                             <i class="linearicons-clock"></i>
                         </div>
                         <div class="contact_text">
-                            <span></span>
+                            <span>Часы работы</span>
                             {% for contact in info_contact %}
                                 <p>{{ contact.opening_hours }}</p>
                             {% endfor %}
@@ -99,12 +100,11 @@
             <div class="row">
                 <div class="col-lg-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="heading_s1">
-                        <h2>Свяжись с нами с любыми вопросами</h2>
+                        <h2>Свяжитесь с нами с любыми вопросами</h2>
                     </div>
-                    <p class="leads">Откройте чат или позвоните нам по телефону который был написан с верху 
-                    </p>
+                    <p class="leads">Откройте чат или позвоните нам по телефону, указанному выше.</p>
                     <div class="rounded_input">
-                        <form method="post" name="enq">
+                        <form method="post" name="enq" id="contactForm">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="form-group col-md-6">
@@ -123,25 +123,28 @@
                                     <input placeholder="Введите тему" id="subject" class="form-control" name="subject">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea required placeholder="Сообшения *" id="description" class="form-control"
+                                    <textarea required placeholder="Сообщение *" id="description" class="form-control"
                                         name="message" rows="4"></textarea>
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" title="Submit Your Message!"
                                         class="btn btn-default btn-radius" id="submitButton" name="submit"
-                                        value="Submit">Отправить Сообшения</button>
+                                        value="Submit">Отправить сообщение</button>
                                 </div>
                                 <div class="col-md-12">
                                     <div id="alert-msg" class="alert-msg text-center"></div>
                                 </div>
                             </div>
                         </form>
+                        <div id="success-message" class="alert alert-success mt-4" style="display: none;">
+                            Ваше сообщение было успешно отправлено!
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 animation mt-4 mt-lg-0" data-animation="fadeInUp" data-animation-delay="0.3s">
                     <div class="map">
                         <iframe
-                            src="https://www.google.ru/maps/place/%D0%9E%D0%B6%D0%B0%D0%BA+%D0%BA%D0%B5%D0%B1%D0%B0%D0%BF/@40.5265528,72.7928111,17z/data=!3m1!4b1!4m6!3m5!1s0x38bdadd0a3b75be1:0x6890bfd22daf00fe!8m2!3d40.5265528!4d72.795386!16s%2Fg%2F11mxbhnzxs?hl=ru&entry=ttu"
+                            src="https://2gis.kg/osh/firm/70000001045093133"
                             allowfullscreen=""></iframe>
                     </div>
                 </div>
@@ -157,4 +160,16 @@
     <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
 
     <!-- Latest jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault();
+
+                // Perform the form submission here (e.g., using AJAX)
+                // Assuming the form submission is successful, show the success message
+                $('#success-message').show();
+            });
+        });
+    </script>
 {% endblock %}

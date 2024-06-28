@@ -3,6 +3,8 @@ from apps.base import models
 # Create your views here.
 def index(request):
     user = models.Home.objects.latest('id')
+    team = models.Team.objects.all()
+    about = models.About.objects.latest('id')   
     return render(request, 'base/index.html', locals())
 
 def about(request):
