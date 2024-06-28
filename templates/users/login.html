@@ -17,7 +17,7 @@
                         <h1>Войти</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url  'index' %}">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
                         <li class="breadcrumb-item active">Войти</li>
                     </ol>
                 </div>
@@ -36,21 +36,27 @@
                         <div class="heading_s1 text-center pb-md-3">
                             <h2>Войти в аккаунт</h2>
                         </div>
+                        {% if error_message %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error_message }}
+                        </div>
+                        {% endif %}
                         <form method="post" class="form_style1">
+                            {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" required="" class="form-control" name="email" placeholder="Почта">
+                                <input type="email" required class="form-control" name="email" placeholder="Почта">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" required="" type="password" name="password"
-                                    Placeholder="Пароль">
+                                <input class="form-control" required type="password" name="password"
+                                    placeholder="Пароль">
                             </div>
                             <div class="login_footer form-group">
-                                <a href="#">Забили пароль ?</a>
+                                <a href="#">Забыли пароль?</a>
                                 <div class="chek-form">
                                     <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="checkbox"
                                             id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3">Запомнит меня</label>
+                                        <label class="form-check-label" for="exampleCheckbox3">Запомнить меня</label>
                                     </div>
                                 </div>
                             </div>

@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('apps.base.urls')),
     path('', include('apps.contacts.urls')),
     path('', include('apps.secondary.urls')),
+    path('', include('apps.users.urls')),
+    path('', include('apps.telegram_bot.urls')),
 ]
 
 urlpatterns += (static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
