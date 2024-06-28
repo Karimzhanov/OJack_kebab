@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Our Gallery</h1>
+                        <h1>Наша галерея</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Our Gallery</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Наша галерея</li>
                     </ol>
                 </div>
             </div>
@@ -32,12 +32,13 @@
             <div class="row">
                 <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                     <ul class="grid_container grid_col3 gutter_medium image_gallery gallery_hover_style1">
+                        {% for gallery in gallery %}
                         <li class="grid-sizer"></li>
                         <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item1.jpg' %}">
+                            <div class="image_gallery_item" style="height: 250px; width: 300px; border-radius: 15px;">
+                                <a href="{{gallery.image.url}}">
                                     <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small1.jpg' %}" alt="image">
+                                        <img src="{{gallery.image.url}}" alt="image">
                                     </div>
                                     <div class="gallary_hover_box">
                                         <i class="ti-zoom-in"></i>
@@ -45,102 +46,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item2.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small2.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item3.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small3.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item4.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small4.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item5.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small5.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item6.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small6.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item7.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small7.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item8.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small8.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item9.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small9.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
