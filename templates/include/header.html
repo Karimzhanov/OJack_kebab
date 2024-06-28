@@ -17,23 +17,35 @@
                         <li><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
                         <li><a class="nav-link" href="{% url 'gallery' %}">Галерея</a></li>
                         <li><a class="nav-link" href="{% url 'contact' %}">Контакты</a></li>
-                        <li><a class="nav-link" href="{% url 'team' %}">Команда</a></li>
+                        <li><a class="nav-link" href="{% url 'blog' %}">Новости</a></li>
                         <li><a class="nav-link" href="{% url 'menu' %}">Меню</a></li>
+                        <li><a class="nav-link" href="{% url 'team' %}">Команда</a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                                href="#">СТраницы</a>
+                                href="#">Pages</a>
                             <div class="dropdown-menu">
-                                <ul> 
+                                <ul>                                   
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="#">Gallery</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery.html">Gallery Grid</a></li>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery-masonry.html">Gallery Masonry</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li><a class="dropdown-item nav-link nav_item" href="{% url 'reservation' %}">Бронирование</a>
                                     </li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'login' %}">Авторизоваться</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'register' %}">Регистрация</a>
+                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'login' %}">Войти</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'register' %}">регистрация</a>
                                     </li>
                                     <li><a class="dropdown-item nav-link nav_item" href="{% url 'page_not_found' %}">404 Страница не найдена</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="nav-link" href="{% url 'blog' %}">Новости</a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
                                 href="#">Shop</a>
                             <div class="dropdown-menu dropdown-menu-right">
