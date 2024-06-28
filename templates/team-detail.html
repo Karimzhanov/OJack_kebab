@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Chef Detail</h1>
+                        <h1>Подробности про нашу команду</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Chef Detail</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Подробности про нашу команду</li>
                     </ol>
                 </div>
             </div>
@@ -32,13 +32,13 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="team_single">
-                        <div class="team_img">
-                            <img src="{% static 'assets/images/team_img_big.jpg' %}" alt="team_img_big">
+                        <div class="team_img" style="border-radius: 15px;">
+                            <img src="{{team.photo.url}}" alt="team_img_big" style="width: 100%; height: auto; max-width: 500px; max-height: 600px; border-radius: 15px; object-fit: cover;">
                         </div>
                         <div class="team_single_info">
                             <div class="team_name">
-                                <h4>Anders Stone</h4>
-                                <span>The Chef</span>
+                                <h4>{{team.fullname}}</h4>
+                                <span>{{team.profession}}</span>
                             </div>
                         </div>
                     </div>
@@ -47,43 +47,38 @@
                     <div class="team_detail">
                         <div class="teacher_desc">
                             <div class="heading_s1 mb-3">
-                                <h5>About Us</h5>
+                                <h5>Обо мне</h5>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam vero expedita fugiat
-                                illo quasi doloremque, in unde omnis sint assumenda! Quaerat in, reprehenderit corporis
-                                voluptatum natus sequi reiciendis ullam. Quam eaque dolorum voluptates cupiditate
-                                explicabo.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum.</p>
+                            <p>{{team.description}}</p>
                         </div>
                         <div class="heading_s1 mb-2 mb-sm-3">
-                            <h5>Basic Info</h5>
+                            <h5>Основная информация</h5>
                         </div>
                         <ul class="profile_info">
                             <li>
-                                <span class="title">Age:</span>
+                                <span class="title">Возраст:</span>
                                 <p>29 Years</p>
                             </li>
                             <li>
-                                <span class="title">Phone No:</span>
-                                <p>+ (123) 1512-578</p>
+                                <span class="title">Телефон:</span>
+                                <p>{{team.phone}}</p>
+                            </li>
+                            <li style="margin-top:25px;">
+                                <span class="title">Почта:</span>
+                                <a href="mailto:{{team.email}}">{{team.email}}</a>
                             </li>
                             <li>
-                                <span class="title">Email ID:</span>
-                                <a href="mailto:info@sitename.com">mymail@gmail.com</a>
-                            </li>
-                            <li>
-                                <span class="title mt-2">Share:</span>
+                                <span class="title mt-2">Соцсети:</span>
                                 <ul class="list_none social_icons">
-                                    <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#" class="sc_gplus"><i class="ion-social-googleplus"></i></a></li>
-                                    <li><a href="#" class="sc_instagram"><i
-                                                class="ion-social-instagram-outline"></i></a></li>
+                                    {% if team.facebook %}
+                                    <li><a href="{{team.facebook}}" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                    {% endif %}
+                                    {% if team.twitter %}
+                                    <li><a href="{{team.twitter}}" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                    {% endif %}
+                                    {% if team.instagram %} 
+                                    <li><a href="{{team.instagram}}" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
+                                    {% endif %}
                                 </ul>
                             </li>
                         </ul>
@@ -92,27 +87,28 @@
             </div>
         </div>
     </div>
+    
 
     <div class="section small_pt pb_70">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="heading_s1 text-center">
-                        <h2>My Works</h2>
+                        <h2>Мои Работы</h2>
                     </div>
-                    <p class="text-center leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore.</p>
+                    <p class="text-center leads">Я, {{team.fullname}}, всегда стремлюсь к новым кулинарным высотам, экспериментируя с ингредиентами и техниками, чтобы создать нечто уникальное и вкусное. Мои блюда — это воплощение креативности и профессионализма..</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                     <ul class="grid_container grid_col3 gutter_medium image_gallery gallery_hover_style1">
                         <li class="grid-sizer"></li>
+                        {% for teamworks in teamworks %}
                         <li class="grid_item">
                             <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item1.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small1.jpg' %}" alt="image">
+                                <a href="{{teamworks.image.url}}">
+                                    <div class="gallery_img" style="width: 400px; height: 300px; overflow: hidden; border-radius: 15px;">
+                                        <img src="{{teamworks.image.url}}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div class="gallary_hover_box">
                                         <i class="ti-zoom-in"></i>
@@ -120,69 +116,11 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item2.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small2.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item3.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small3.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item4.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small4.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item5.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small5.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="grid_item">
-                            <div class="image_gallery_item">
-                                <a href="{% static 'assets/images/gallery_item6.jpg' %}">
-                                    <div class="gallery_img">
-                                        <img src="{% static 'assets/images/gallery_item_small6.jpg' %}" alt="image">
-                                    </div>
-                                    <div class="gallary_hover_box">
-                                        <i class="ti-zoom-in"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
+            
         </div>
     </div>
     <!-- END SECTION TEAM -->

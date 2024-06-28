@@ -11,7 +11,11 @@ class AboutAdmin(admin.ModelAdmin):
 
 @admin.register(models.Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['id', 'fullname', 'profession','facebook', 'twitter', 'email', 'instagram']
+    list_display = ['id', 'fullname','age', 'phone', 'profession','facebook', 'twitter', 'email', 'instagram']
+
+@admin.register(models.TeamWorks)
+class TeamWorksAdmin(admin.ModelAdmin):
+    list_display = ['id',]
 
 @admin.register(models.Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):

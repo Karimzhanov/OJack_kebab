@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from apps.secondary import models
+from apps.base.models import (Team ,
+                              TeamWorks)
 # Create your views here.
 def page_not_found(request):
     return render(request, '404.html', locals())
@@ -19,9 +21,12 @@ def checkout(request):
     return render(request, 'checkout.html', locals())
 
 def team(request):
+    team = Team.objects.all()
     return render(request, 'team.html', locals())
 
-def team_detail(request):
+def team_detail(request, id):
+    team = Team.objects.get(id=id)
+    teamworks = TeamWorks.objects.all()
     return render(request, 'team-detail.html', locals())
 
 def gallery(request):

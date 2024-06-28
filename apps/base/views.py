@@ -8,6 +8,7 @@ def index(request):
 def about(request):
     about = models.About.objects.latest('id')
     team = models.Team.objects.all()
+    teamworks = models.TeamWorks.objects.all()
     testimonial = models.Testimonial.objects.all()
     return render(request, 'base/about.html', locals())
 
