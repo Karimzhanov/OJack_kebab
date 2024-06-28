@@ -33,4 +33,3 @@ def menu(request):
 
 def menu_detail(request):
     return render(request, 'menu-detail.html', locals())
-

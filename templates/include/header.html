@@ -14,26 +14,69 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="{% url 'index' %}">Главная</a></li>
-                        <li><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
-                        <li><a class="nav-link" href="{% url 'gallery' %}">Галерея</a></li>
-                        <li><a class="nav-link" href="{% url 'contact' %}">Контакты</a></li>
-                        <li><a class="nav-link" href="{% url 'team' %}">Команда</a></li>
-                        <li><a class="nav-link" href="{% url 'menu' %}">Меню</a></li>
+                        <li><a class="nav-link active" href="{% url 'about' %}">О нас</a></li>
+                        <li><a class="nav-link active" href="{% url 'gallery' %}">Галерея</a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                                href="#">СТраницы</a>
+                                href="#">Pages</a>
                             <div class="dropdown-menu">
-                                <ul> 
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'reservation' %}">Бронирование</a>
+                                <ul>                                   
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="#">Gallery</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery.html">Gallery Grid</a></li>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="gallery-masonry.html">Gallery Masonry</a></li>
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'login' %}">Авторизоваться</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'register' %}">Регистрация</a>
+                                    <li class="dropdown">
+                                        <a class="dropdown-item menu-link dropdown-toggler" data-toggle="dropdown"
+                                            href="{% url 'contact'%}">Связаться с нами</a>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="{% url 'contact'%}">Связаться с нами</a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'page_not_found' %}">404 Страница не найдена</a>
+                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'reservation' %}">бронирование</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'login' %}">Войти</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="{% url 'register' %}">регистрация</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="404.html">404 Error Page</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="coming-soon.html">Coming
+                                            Soon</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Menu</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="menu.html">Menu Style 1</a>
+                                    </li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="menu-2.html">Menu Style 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="nav-link" href="{% url 'blog' %}">Новости</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                href="#">Chef</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a class="dropdown-item nav-link nav_item" href="chef.html">Chef</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="chef-detail.html">Chef
+                                            Detail</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="nav-link active" href="{% url 'blog' %}">Новости</a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
                                 href="#">Shop</a>
                             <div class="dropdown-menu dropdown-menu-right">
