@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Our Chef</h1>
+                        <h1>Наша команда</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Chef</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Команда</li>
                     </ol>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="team_content">
                             <div class="team_title">
-                                <h4>Anders Stone</h4>
+                                <h4><a href="{% url 'team_detail' %}">Anders Stone</a></h4>
                                 <span>The Chef</span>
                             </div>
                         </div>

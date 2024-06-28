@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title">
-                        <h1>Blog</h1>
+                        <h1>Новости</h1>
                     </div>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blog</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Новости</li>
                     </ol>
                 </div>
             </div>
@@ -27,157 +27,55 @@
     <!-- END SECTION BREADCRUMB -->
 
     <!-- START SECTION BLOG-->
+    <style>
+        .blog_post {
+            height: 350px; /* Укажите высоту, которая вам подходит */
+        }
+    
+        .blog_img {
+            height: 200px; /* Укажите высоту изображения */
+            overflow: hidden; /* Обрезать изображение, если оно выходит за границы */
+        }
+    
+        .blog_img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Заполнение изображения по размерам блока */
+        }
+    
+        .blog_content {
+            padding: 20px; /* Добавление отступов вокруг контента */
+        }
+    </style>
+    
     <div class="section">
         <div class="container">
             <div class="row justify-content-center">
+                {% for news in news %}
                 <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="blog_post blog_style1 box_shadow1">
                         <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img1.jpg' %}" alt="blog_small_img1">
+                            <a href="{% url 'blog_detail' news.id %}">
+                                <img src="{{news.image.url}}" style="height: 200px; width: 500px;" alt="blog_small_img1">
                             </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
+                            <span class="post_date radius_all_10">{{news.date}}</span>
                         </div>
                         <div class="blog_content">
                             <div class="blog_text">
                                 <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
+                                    <li><a href="{% url 'blog_detail' news.id %}"><i class="ti-user"></i>{{news.author}}</a></li>
                                 </ul>
-                                <h5 class="blog_title"><a href="#">The Sanford Stadium project consists of three main
-                                        areas</a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
+                                <h5 class="blog_title"><a href="{% url 'blog_detail' news.id %}">{{news.title}}</a></h5>
+                                <p>{{news.content|safe}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                    <div class="blog_post blog_style1 box_shadow1">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img2.jpg' %}" alt="blog_small_img2">
-                            </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                </ul>
-                                <h5 class="blog_title"><a href="#">On the other hand we provide Inhence with righteous
-                                        Career</a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                    <div class="blog_post blog_style1 box_shadow1">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img3.jpg' %}" alt="blog_small_img3">
-                            </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                </ul>
-                                <h5 class="blog_title"><a href="#">A cheap and flexible solution for those who want a
-                                        starter package </a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                    <div class="blog_post blog_style1 box_shadow1">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img4.jpg' %}" alt="blog_small_img4">
-                            </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                </ul>
-                                <h5 class="blog_title"><a href="#">A cheap and flexible solution for those who want a
-                                        starter package </a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                    <div class="blog_post blog_style1 box_shadow1">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img5.jpg' %}" alt="blog_small_img5">
-                            </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                </ul>
-                                <h5 class="blog_title"><a href="#">A cheap and flexible solution for those who want a
-                                        starter package </a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                    <div class="blog_post blog_style1 box_shadow1">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{% static 'assets/images/blog_small_img6.jpg' %}" alt="blog_small_img6">
-                            </a>
-                            <span class="post_date radius_all_10"><strong>02</strong> May</span>
-                        </div>
-                        <div class="blog_content">
-                            <div class="blog_text">
-                                <ul class="list_none blog_meta">
-                                    <li><a href="#"><i class="ti-user"></i> By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                </ul>
-                                <h5 class="blog_title"><a href="#">A cheap and flexible solution for those who want a
-                                        starter package </a></h5>
-                                <p>Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                                    making this generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 mt-2 mt-md-4">
-                    <ul class="pagination pagination_style1 justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i
-                                    class="linearicons-arrow-left"></i></a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#"><i class="linearicons-arrow-right"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+    
     <!-- END SECTION BLOG-->
 
     <!-- START FOOTER -->

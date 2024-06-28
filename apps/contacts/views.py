@@ -3,7 +3,6 @@ from apps.contacts.models import Contacts, Contact, Reservation
 from apps.telegram_bot.views import get_text
 from datetime import datetime
 
-
 # Create your views here
 
 def contact(request):
@@ -36,9 +35,6 @@ def contact(request):
 """)
 
     return render(request, 'base/contact.html', {'info_contact': info_contact})
-
-
-
 
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest
