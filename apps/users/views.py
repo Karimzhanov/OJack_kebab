@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from apps.users import models
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
 
@@ -17,4 +18,5 @@ def login(request):
     return render(request, 'users/login.html', {'error_message': error_message})
 
 def register(request):
+    register = models.Register.objects.get
     return render(request, 'users/register.html', locals())

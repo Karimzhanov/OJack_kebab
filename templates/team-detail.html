@@ -1,0 +1,135 @@
+{% include 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+    <!-- END LOADER -->
+
+    <!-- START HEADER -->
+    {% include 'include/header.html' %}
+    <!-- END HEADER -->
+
+    <!-- START SECTION BREADCRUMB -->
+    <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light"
+        data-img-src="{% static 'assets/images/chef_detail_bg.jpg' %}">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <h1>Подробности про нашу команду</h1>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Подробности про нашу команду</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- END CONTAINER-->
+    </div>
+    <!-- END SECTION BREADCRUMB -->
+
+    <!-- START SECTION TEAM -->
+    <div class="section small_pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team_single">
+                        <div class="team_img" style="border-radius: 15px;">
+                            <img src="{{team.photo.url}}" alt="team_img_big" style="width: 100%; height: auto; max-width: 500px; max-height: 600px; border-radius: 15px; object-fit: cover;">
+                        </div>
+                        <div class="team_single_info">
+                            <div class="team_name">
+                                <h4>{{team.fullname}}</h4>
+                                <span>{{team.profession}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="team_detail">
+                        <div class="teacher_desc">
+                            <div class="heading_s1 mb-3">
+                                <h5>Обо мне</h5>
+                            </div>
+                            <p>{{team.description}}</p>
+                        </div>
+                        <div class="heading_s1 mb-2 mb-sm-3">
+                            <h5>Основная информация</h5>
+                        </div>
+                        <ul class="profile_info">
+                            <li>
+                                <span class="title">Возраст:</span>
+                                <p>29 Years</p>
+                            </li>
+                            <li>
+                                <span class="title">Телефон:</span>
+                                <p>{{team.phone}}</p>
+                            </li>
+                            <li style="margin-top:25px;">
+                                <span class="title">Почта:</span>
+                                <a href="mailto:{{team.email}}">{{team.email}}</a>
+                            </li>
+                            <li>
+                                <span class="title mt-2">Соцсети:</span>
+                                <ul class="list_none social_icons">
+                                    {% if team.facebook %}
+                                    <li><a href="{{team.facebook}}" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                    {% endif %}
+                                    {% if team.twitter %}
+                                    <li><a href="{{team.twitter}}" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
+                                    {% endif %}
+                                    {% if team.instagram %} 
+                                    <li><a href="{{team.instagram}}" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section small_pt pb_70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                    <div class="heading_s1 text-center">
+                        <h2>Мои Работы</h2>
+                    </div>
+                    <p class="text-center leads">Я, {{team.fullname}}, всегда стремлюсь к новым кулинарным высотам, экспериментируя с ингредиентами и техниками, чтобы создать нечто уникальное и вкусное. Мои блюда — это воплощение креативности и профессионализма..</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                    <ul class="grid_container grid_col3 gutter_medium image_gallery gallery_hover_style1">
+                        <li class="grid-sizer"></li>
+                        {% for teamworks in teamworks %}
+                        <li class="grid_item">
+                            <div class="image_gallery_item">
+                                <a href="{{teamworks.image.url}}">
+                                    <div class="gallery_img" style="width: 400px; height: 300px; overflow: hidden; border-radius: 15px;">
+                                        <img src="{{teamworks.image.url}}" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div class="gallary_hover_box">
+                                        <i class="ti-zoom-in"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- END SECTION TEAM -->
+
+    <!-- START FOOTER -->
+    {% include 'include/footer.html' %}
+    <!-- END FOOTER -->
+
+    <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+    <!-- Latest jQuery -->
+{% endblock %}

@@ -139,25 +139,22 @@
                 <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                     <div class="team_box team_style2" style="height: 250; width: 250px;">
                         <div class="team_img" style="height: 250px; width: 200px;">
-                            <img src="{{team.photo.url}}" style="height: 300px; width: 250px; border-radius: 15px;" alt="team_img1">
+                            <a href="{% url 'team_detail' team.id %}"><img src="{{team.photo.url}}" style="height: 300px; width: 250px; border-radius: 15px;" alt="team_img1"></a>
                         </div>
                         <div class="team_content"style="height: 180px; width: 250px;">
                             <div class="team_title">
-                                <h4>{{team.fullname}}</h4>
-                                <span>{{team.profession}}</span>
+                                <h4><a href="{% url 'team_detail' team.id %}">{{team.fullname}}</a></h4>
+                                <span><a href="{% url 'team_detail' team.id %}">{{team.profession}}</a></span>
                             </div>
                             <ul class="social_icons">
                                 {% if team.facebook %}
-                                <li><a href="#" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="{{team.facebook}}" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
                                 {% endif %}
                                 {% if team.twitter %}
-                                <li><a href="#" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                                {% endif %}
-                                {% if team.email %}
-                                <li><a href="#" class="sc_google"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="{{team.twitter}}" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
                                 {% endif %}
                                 {% if team.instagram %}
-                                <li><a href="#" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
+                                <li><a href="{{team.instagram}}" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a>
                                 {% endif %}
                                 </li>
                             </ul>
@@ -165,9 +162,15 @@
                     </div>
                 </div>
                 {% endfor %}
+                <div class="row">
+                    <div class="col-12 text-center pt-sm-3">
+                        <a href="{% url 'team' %}" class="btn btn-default btn-radius">Вся команда</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
     <!-- END SECTION TEAM -->
 
     <!-- START SECTION TESTIMONIAL -->

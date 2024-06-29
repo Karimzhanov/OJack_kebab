@@ -6,7 +6,7 @@
                 <div class="col-xl-4 col-md-8 col-sm-12">
                     <div class="widget">
                         <div class="footer_logo">
-                            <a href="index-6.html"><img src="{% static 'assets/images/logo_light.png' %}" alt="logo" /></a>
+                            <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo_light.png' %}" alt="logo" /></a>
                         </div>
                         <p>If you are going to use a passage of Lorem Ipsum you need to be sure there isn't anything
                             embarrassing hidden in the middle of text</p>
@@ -23,37 +23,36 @@
                 </div>
                 <div class="col-xl-2 col-md-4 col-sm-5">
                     <div class="widget">
-                        <h6 class="widget_title">Useful Links</h6>
+                        <h6 class="widget_title">Наши страницы</h6>
                         <ul class="widget_links">
-                            <li><a href="#">Our services</a></li>
-                            <li><a href="#">Company history</a></li>
-                            <li><a href="#">Support center</a>
-                            <li><a href="#">Latest Projects</a></li>
-                            <li><a href="#">Our Mission</a>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'gallery' %}">Галерея</a></li>
+                            <li><a href="{% url 'contact' %}">Контакты </a>
+                            <li><a href="{% url 'team' %}">Команда</a></li>
+                            <li><a href="{% url 'menu' %}">Меню</a>
+                            <li><a href="{% url 'blog' %}">Новости</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 col-sm-7">
                     <div class="widget">
-                        <h6 class="widget_title">Contact Info</h6>
+                        <h6 class="widget_title">Контактная информация</h6>
                         <ul class="contact_info contact_info_light">
                             <li>
                                 <i class="ti-location-pin"></i>
-                                <p>Dew Drive Annapolis Junction California, USA</p>
+                                <p>{{contacts.our_location}}</p>
                             </li>
                             <li>
                                 <i class="ti-email"></i>
-                                <a href="mailto:info@sitename.com">info@sitename.com</a>
+                                <a href="mailto:{{contacts.email}}">{{contacts.email}}</a>
                             </li>
                             <li>
                                 <i class="ti-mobile"></i>
-                                <p>508-992-5074</p>
+                                <p>{{contacts.phone_number}}</p>
                             </li>
                             <li>
                                 <i class="ti-time"></i>
-                                <p>Mon - Sat <strong>8:00AM - 9:30PM</strong> Sunday - <strong>8:00AM -
-                                        9:30PM</strong></p>
+                                <p>{{contacts.opening_hours}}</p>
                             </li>
                         </ul>
                     </div>

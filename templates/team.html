@@ -1,0 +1,71 @@
+{% include 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+    <!-- END LOADER -->
+
+    <!-- START HEADER -->
+    {% include 'include/header.html' %}
+    <!-- END HEADER -->
+
+    <!-- START SECTION BREADCRUMB -->
+    <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light"
+        data-img-src="{% static 'assets/images/chef_bg.jpg' %}">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <h1>Наша команда</h1>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная страница</a></li>
+                        <li class="breadcrumb-item active">Команда</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- END CONTAINER-->
+    </div>
+    <!-- END SECTION BREADCRUMB -->
+
+    <!-- START SECTION TEAM -->
+    <div class="section pb_70">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for team in team %}
+                <div class="col-lg-3 col-sm-6 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="team_box team_style1 radius_all_10">
+                        <div class="team_img">
+                            <a href="{% url 'team_detail' team.id %}"><img src="{{team.photo.url}}" style="height: 300px; width: 250px; border-radius: 15px;" alt="team_img1"></a>
+                            <ul class="social_icons social_white">
+                                {% if team.facebook %}
+                                <li><a href="{{team.facebook}}"><i class="ion-social-facebook"></i></a></li>
+                                {% endif %}
+                                {% if team.twitter %}                              
+                                <li><a href="{{team.twitter}}"><i class="ion-social-twitter"></i></a></li>
+                                {% endif %}
+                                {% if team.instagram %}
+                                <li><a href="{{team.instagram}}"><i class="ion-social-instagram-outline"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="team_content">
+                            <div class="team_title">
+                                <h4><a href="{% url 'team_detail' team.id %}">{{team.fullname}}</a></h4>
+                                <span><a href="{% url 'team_detail' team.id %}">{{team.profession}}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- END SECTION TEAM -->
+
+    <!-- START FOOTER -->
+    {% include 'include/footer.html' %}
+    <!-- END FOOTER -->
+
+    <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+    <!-- Latest jQuery -->
+{% endblock %}
