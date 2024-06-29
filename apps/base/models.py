@@ -50,6 +50,15 @@ class Team(models.Model):
         max_length = 255,
         verbose_name = "Полное имя"
     )
+    description = models.TextField(
+        verbose_name = "Описание о себе"
+    )
+    age = models.PositiveIntegerField(
+        verbose_name = "Возраст"
+    )
+    phone = models.PositiveIntegerField(
+        verbose_name = "Телефон"
+    )
     photo = models.ImageField(
         upload_to = "photo_employee/",
         verbose_name = "Фотография"
@@ -81,6 +90,17 @@ class Team(models.Model):
     class Meta:
         verbose_name = 'Команда'
         verbose_name_plural = 'Команды'
+
+class TeamWorks(models.Model):
+    image = models.ImageField(
+        upload_to = "my_works/",
+        verbose_name = 'Мои работы',
+        help_text='Нужно вставить фотографии работ повара'
+    )
+    
+    class Meta:
+        verbose_name = 'Работа повара'
+        verbose_name_plural = 'Работы поваров'
 
 class Testimonial(models.Model):
     photo = models.ImageField(
