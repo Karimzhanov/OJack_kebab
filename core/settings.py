@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'apps.contacts',
     'apps.secondary',
     'apps.users',
-    'apps.telegram_bot',
+    'apps.telegram_bot',   
     
     ]
+
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
