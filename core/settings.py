@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #apps
     'apps.base',
+    'apps.cartItem',
     'apps.contacts',
+    'apps.menu',
     'apps.secondary',
     'apps.users',
     'apps.telegram_bot',

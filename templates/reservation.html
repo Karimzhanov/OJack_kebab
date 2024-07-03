@@ -9,7 +9,7 @@
 
     <!-- START SECTION BREADCRUMB -->
     <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light"
-        data-img-src="{% static 'assets/images/book_table_bg.jpg' %}">
+        data-img-src="{{ reservatios.first.image1.url }}">
         <div class="container"><!-- STRART CONTAINER -->
             <div class="row">
                 <div class="col-sm-12">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="col-lg-5 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="chef_img">
-                        <img src="{% static 'assets/images/chef.png' %}" alt="chef" />
+                        <img src="{{ reservatios.first.image.url }}" alt="chef" />
                     </div>
                 </div>
             </div>

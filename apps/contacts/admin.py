@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.contacts.models import Contacts, Contact, Reservation
+from apps.contacts.models import Contacts, Contact, Reservation, Reservatio
 
 # Register your models here.
 @admin.register(Contacts)
@@ -13,3 +13,7 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'phone']
+
+@admin.register(Reservatio)
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'image', ]

@@ -113,8 +113,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8">
-                    <div class="heading_s1 text-center animation" data-animation="fadeInUp"
-                        data-animation-delay="0.02s">
+                    <div class="heading_s1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                         <div class="sub_heading font_style1">Специальная еда</div>
                         <h2>из нашего меню</h2>
                     </div>
@@ -124,145 +123,35 @@
                 <div class="col-md-12">
                     <div class="small_divider clearfix"></div>
                     <ul class="menu_list animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                        {% for item in menu_items %}
                         <li>
                             <div class="single_menu_product">
                                 <div class="menu_product_info">
                                     <div class="menu_title_price">
                                         <div class="menu_title">
-                                            <h5>Ягодный салат</h5>
+                                            <h5>{{ item.name }}</h5>
                                         </div>
                                         <div class="menu_title_line"></div>
                                         <div class="menu_price">
-                                            <span>$12</span>
+                                            <span>${{ item.price }}</span>
                                         </div>
                                     </div>
-                                    <p>Голубой сыр, паупьет из курицы, соль с розмарином и фасоль.</p>
+                                    <p>{{ item.description }}</p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Pancake</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$14</span>
-                                        </div>
-                                    </div>
-                                    <p>Marinated tomatoes, cornish mackerel, fragrant curry</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Egg Bread</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$04</span>
-                                        </div>
-                                    </div>
-                                    <p>Spelt, girolles,Smoked quail, parsley, crispy egg</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Milky Fruit</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$06</span>
-                                        </div>
-                                    </div>
-                                    <p>Duck confit, wilted spinach, white bean & ham cassoulet</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Berry Bread</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$09</span>
-                                        </div>
-                                    </div>
-                                    <p>Rosemary salt potatoes, Backed salmon, hollandaise sauce</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Orange Jam Bread</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$03</span>
-                                        </div>
-                                    </div>
-                                    <p>Creamy poienta, carrots & port sauce, english peas</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Orange Jam Bread</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$03</span>
-                                        </div>
-                                    </div>
-                                    <p>Artchokes, farro & black current gastrique, Fava beans</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single_menu_product">
-                                <div class="menu_product_info">
-                                    <div class="menu_title_price">
-                                        <div class="menu_title">
-                                            <h5>Orange Jam Bread</h5>
-                                        </div>
-                                        <div class="menu_title_line"></div>
-                                        <div class="menu_price">
-                                            <span>$03</span>
-                                        </div>
-                                    </div>
-                                    <p>Mint parsly with apple cider vinegar, sugar &spices, salt</p>
-                                </div>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center pt-sm-3">
-                    <a href="#" class="btn btn-default btn-radius">View All</a>
+                    <a href="{% url 'menu'%}" class="btn btn-default btn-radius">Посмотреть все</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- START SECTION OUR MENU -->
+    <!-- END SECTION OUR MENU -->
 
     <!-- START SECTION BOOK TABLE -->
     <div class="section background_bg overlay_bg_70" data-img-src="{% static 'assets/images/book_table_bg.jpg' %}">

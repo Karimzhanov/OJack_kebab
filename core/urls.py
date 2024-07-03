@@ -22,9 +22,11 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.base.urls')),
+    path('', include('apps.cartItem.urls')),
     path('', include('apps.contacts.urls')),
     path('', include('apps.secondary.urls')),
     path('', include('apps.users.urls')),
+    path('', include('apps.menu.urls')),
     path('', include('apps.telegram_bot.urls')),
 ]
 

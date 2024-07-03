@@ -81,3 +81,21 @@ class Reservation(models.Model):
     class Meta:
         verbose_name = 'Бронирование'
         verbose_name_plural = 'Бронирования'
+
+class Reservatio(models.Model):
+    image1 = models.ImageField(
+        upload_to = "info_users/",
+        verbose_name = "Задний Фон"
+    )
+
+
+    image = models.ImageField(
+        upload_to = "info_users",
+        verbose_name = "фото"
+    )
+    def __str__(self):
+        return f'Изображение {self.image}'
+
+    class Meta:
+        verbose_name = "страница для Бронирование "
+        verbose_name_plural = "страница для Бронирование"

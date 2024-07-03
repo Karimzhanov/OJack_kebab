@@ -33,8 +33,3 @@ def gallery(request):
     gallery = models.Gallery.objects.all()
     return render(request, 'gallery.html', locals())
 
-def menu(request):
-    return render(request, 'menu.html', locals())
-
-def menu_detail(request):
-    return render(request, 'menu-detail.html', locals())

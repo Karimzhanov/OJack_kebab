@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.contacts.models import Contacts, Contact, Reservation
+from apps.contacts.models import Contacts, Contact, Reservation, Reservatio
 from apps.telegram_bot.views import get_text
 from datetime import datetime
 
@@ -38,11 +38,13 @@ def contact(request):
 
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest
-from .models import Reservation  # Подставьте свою модель Reservation
+from apps.contacts.models import Reservation, Reservatio  # Подставьте свою модель Reservation
 from datetime import datetime
 
 
 def reservation(request):
+    reservatios = Reservatio.objects.all()
+
     if request.method == 'POST':
         try:
             name = request.POST.get('name')
@@ -68,14 +70,14 @@ def reservation(request):
 
             # Отправка текстового сообщения
             message = f"""
-            Оставлена заявка на бронирование столика:
+Оставлена заявка на бронирование столика:
 
-            Дата: {datetime.now()}
-            Имя пользователя: {name}
-            Почта пользователя: {email}
-            Номер телефона: {phone}
-            Дата бронирования: {date} {time}
-            Количество человек: {num_people}
+Дата: {datetime.now()}
+Имя пользователя: {name}
+Почта пользователя: {email}
+Номер телефона: {phone}
+Дата бронирования: {date} {time}
+Количество человек: {num_people}
             """
             get_text(message)
 
@@ -86,7 +88,7 @@ def reservation(request):
             return HttpResponseBadRequest(f'Ошибка при добавлении бронирования: {e}')
 
     # Если метод запроса GET, просто отображаем форму бронирования
-    return render(request, 'reservation.html')
+    return render(request, 'reservation.html', {'reservatios': reservatios})
 
 def booking_confirmation(request):
     return render(request, 'booking_confirmation.html', locals())
